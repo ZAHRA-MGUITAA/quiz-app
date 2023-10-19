@@ -1,0 +1,84 @@
+{
+    "quizzes": [
+      {
+        "id": "1",
+        "title": "React Basics Quiz",
+        "questions": [
+          {
+            "id": "1",
+            "question": "What does JSX stand for?",
+            "options": [
+              "JavaScript XML",
+              "Extended JavaScript",
+              "XML JavaScript",
+              "JavaScript Extension"
+            ],
+            "correctAnswer": "JavaScript XML"
+          },
+          {
+            "id": "2",
+            "question": "What is a component in React?",
+            "options": [
+              "A function that returns React elements",
+              "A CSS styling library",
+              "A built-in JavaScript function",
+              "An HTML element"
+            ],
+            "correctAnswer": "A function that returns React elements"
+          },
+          {
+            "id": "3",
+            "question": "What is state in React?",
+            "options": [
+              "A built-in React component",
+              "An external JavaScript library",
+              "An object that stores component data",
+              "A lifecycle method"
+            ],
+            "correctAnswer": "An object that stores component data"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "React Components Quiz",
+        "questions": [
+          {
+            "id": "1",
+            "question": "What is the purpose of componentDidMount() lifecycle method?",
+            "options": [
+              "To perform actions after a component is rendered",
+              "To update the component's state",
+              "To handle user events",
+              "To define initial props"
+            ],
+            "correctAnswer": "To perform actions after a component is rendered"
+          },
+          {
+            "id": "2",
+            "question": "What is a functional component in React?",
+            "options": [
+              "A component written with ES5 syntax",
+              "A component that uses class syntax",
+              "A component that is defined as a JavaScript function",
+              "A component that has no state"
+            ],
+            "correctAnswer": "A component that is defined as a JavaScript function"
+          },
+          {
+            "id": "3",
+            "question": "What is the purpose of props in React?",
+            "options": [
+              "To store component data",
+              "To pass data from a parent component to a child component",
+              "To define initial state",
+              "To handle user events"
+            ],
+            "correctAnswer": "To pass data from a parent component to a child component"
+          }
+        ]
+      }
+    ]
+  }
+  
+
