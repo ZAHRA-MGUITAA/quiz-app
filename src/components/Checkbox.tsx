@@ -4,35 +4,24 @@ import { selectQuestion } from "../app/questionSlice";
 
 const Checkbox = ({
   answer,
-  handelAnswer,
+  index,
   handelChange,
   isChecked,
- 
 }: {
   answer: string;
-  handelAnswer: any;
-  handelChange :any
-  isChecked : boolean;
+  index: number;
+  handelChange: any;
+  isChecked: boolean;
 }) => {
-  // const [selectedOptions, setselectedOptions] = useState(
-  //   useSelector(selectQuestion).selectOption
-  // );
-
- 
-  // function handelChange(e: ChangeEvent) {
-  //   const target = e.target as HTMLInputElement;
-  //   setselectedOptions(target.checked);
-  //   setIsChecked(!selectedOptions);
-  // }
-  console.log(answer + "==>" +isChecked)
-
+  const asciiToLetter = (value: number): string => String.fromCharCode(value);
+  
   return (
     <div
       className={
         (isChecked ? "bg-primaryColor" : "bg-white") +
         " group   px-4 w-96 rounded-lg "
       }
-      key={answer}
+      key={index}
     >
       <label className="w-full flex items-center gap-8 h-full relative  py-4">
         <input
@@ -41,14 +30,11 @@ const Checkbox = ({
           name="answer"
           id=""
           value={answer}
-          onClick={(e) => {
-            handelAnswer(e);
-          }}
           checked={isChecked}
-          onChange={handelChange}
-                  />
+          onChange={(e) => handelChange(e,index)}
+        />
         <span className="px-2 py-1 w-8 rounded-full bg-greenLight absolute left-0 text-primaryColor text-center group-hover:bg-primaryColor group-hover:text-white">
-          A
+          {asciiToLetter(65 + index)}
         </span>
         <p
           className={

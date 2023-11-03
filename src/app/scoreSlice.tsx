@@ -22,6 +22,9 @@ export const scoreSlice = createSlice({
         incrementScore : (state) => {
             state.score +=1
         },
+        decrementScore : (state) => {
+            state.score -=1
+        },
         completQuiz : (state) => {
             state.quizComplet = true
         }
@@ -29,6 +32,6 @@ export const scoreSlice = createSlice({
 })
 
 
-export const {incrementScore,completQuiz} = scoreSlice.actions
+export const {incrementScore,decrementScore,completQuiz} = scoreSlice.actions
 export const selectScore = (state : RootState) => state.score
 export default scoreSlice.reducer
