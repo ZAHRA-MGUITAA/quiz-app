@@ -1,16 +1,8 @@
-import { useState } from 'react'
-import './App.css'
-import Quizzes from './pages/Quizzes/quizzes'
-import { Provider } from 'react-redux'
-import { store } from './app/store'
-
-
+import "./App.css";
+import Quizzes from "./pages/Quizzes/quizzes";
 
 function App() {
-
-  return (
-    <Quizzes />
-  )
+  return <Quizzes />;
 }
 
-export default App
+export default App;

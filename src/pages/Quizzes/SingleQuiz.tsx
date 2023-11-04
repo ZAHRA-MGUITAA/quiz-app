@@ -11,7 +11,6 @@ const SingleQuiz = () => {
   const dispatch = useAppDispatch();
   const { id } = useParams<string>();
   const status = useAppSelector((state) => state.question.loading);
-  // const [checkedAnswer, setCheckedAnswer] = useState<{}[]>([]);
   const currentQuestionIndex = useAppSelector(
     (state) => state.question.currentQuestionIndex
   );
@@ -30,18 +29,12 @@ const SingleQuiz = () => {
 
   // handel change of the checkbox ( checke answer )
   const handelChange = (e: Event, index: number) => {
-    // const qidtocheck = currentQuestion.id
     const updatedIsCheckedList = isCheckedList.map((value, i) =>
       i === index ? !value : value
     );
     setIsCheckedList(updatedIsCheckedList);
     const target = e.target as HTMLInputElement;
     if (target.checked) {
-      // const isQidalreadyChecked = checkedAnswer.some(obj => obj.qId === qidtocheck)
-      // console.log(isQidalreadyChecked)
-      // if(!isQidalreadyChecked){
-      //   setCheckedAnswer([...checkedAnswer, { qId: currentQuestion.id, userAnswer : target.value }]);
-      // }
       if (target.value === currentQuestion?.correctAnswer) {
         dispatch(incrementScore());
       }
@@ -62,19 +55,18 @@ const SingleQuiz = () => {
     }
   };
 
-
   return (
-    <div className="bg-[#CEF7F1]">
+    <div className="">
       <div className="flex flex-col container mx-auto h-screen items-center justify-center">
-        <div className="flex flex-col relative w-96 py-14">
-          <p className="text-lg text-center text-primaryColor ">
-            Question {allquestion[currentQuestionIndex]?.id}/
+        <div className="flex flex-col relative w-full py-14">
+          <p className="text-lg text-left text-primaryColor font-bold bg-secondaryColor w-fit p-4 rounded-md">
+            Question No.{allquestion[currentQuestionIndex]?.id} of{" "}
             {allquestion.length}
           </p>
-          <p className="text-xl font-bold text-center text-primaryColor my-12">
+          <p className="text-xl font-bold text-left text-primaryColor my-6 border-2 bg-gray-300 py-4 px-4 rounded-md">
             {allquestion[currentQuestionIndex]?.question}
           </p>
-          <div className="answers flex flex-col gap-4 justify-center items-center">
+          <div className="answers flex flex-col justify-center items-center border-2 rounded-md divide-y">
             {allquestion[currentQuestionIndex]?.options.map(
               (answer: string, index) => (
                 <Checkbox

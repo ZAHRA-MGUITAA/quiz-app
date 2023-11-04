@@ -1,16 +1,16 @@
 export type Question = {
-    id : string,
-    question : string,
-    options : string[],
-    correctAnswer : string
-}
+  id: string;
+  question: string;
+  options: string[];
+  correctAnswer: string;
+};
 
 export type Quiz = {
-    id : string,
-    title : string,
-    questions? : Question[]
-}
+  id: string;
+  title: string;
+  questions?: Question[];
+};
 
 export type Answer = {
-    answer : string
-}
+  answer: string;
+};
