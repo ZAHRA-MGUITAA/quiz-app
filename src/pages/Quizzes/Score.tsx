@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectScore } from "../../app/scoreSlice";
 import { selectQuestion } from "../../app/questionSlice";
-
+import { Link } from "react-router-dom";
 const Score = () => {
   const score = useSelector(selectScore);
   const quiz = useSelector(selectQuestion);
@@ -23,6 +23,13 @@ const Score = () => {
           <p>Your Score : </p>
           <p>{((score.score / quiz.questions.length) * 100).toFixed()}%</p>
         </div>
+        <Link
+          reloadDocument
+          to={"/"}
+          className="bg-secondaryColor w-full  px-4 py-2 rounded-md flex justify-center items-center "
+        >
+          Back to Home
+        </Link>
       </div>
     </div>
   );

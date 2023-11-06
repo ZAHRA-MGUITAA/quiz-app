@@ -19,7 +19,7 @@ export const scoreSlice = createSlice({
       state.score += 1;
     },
     decrementScore: (state) => {
-      state.score -= 1;
+      state.score !== 0 ? state.score-- : state.score;
     },
     completQuiz: (state) => {
       state.quizComplet = true;
