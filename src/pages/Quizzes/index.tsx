@@ -1,20 +1,12 @@
-import { useSelector } from "react-redux"
-import { completQuiz, selectScore } from "../../app/scoreSlice"
-import Score from "./Score"
-import SingleQuiz from "./SingleQuiz"
-
-
-
+import { useSelector } from "react-redux";
+import { selectScore } from "../../app/scoreSlice";
+import Score from "./Score";
+import SingleQuiz from "./SingleQuiz";
 
 const Home = () => {
-    const completQuiz = useSelector(selectScore).quizComplet
+  const completQuiz = useSelector(selectScore).quizComplet;
 
-
-    return(
-  completQuiz ? <Score /> : <SingleQuiz />
-
-    )
-}
-
+  return completQuiz ? <Score /> : <SingleQuiz />;
+};
 
 export default Home;

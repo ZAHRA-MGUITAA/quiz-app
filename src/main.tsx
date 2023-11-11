@@ -9,24 +9,27 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 import Score from "./pages/Quizzes/Score.tsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "quiz/:id",
-    element: <Home />,
-  },
-  {
-    path: "quizzes",
-    element: <Quizzes />,
-  },
-  {
-    path: "score",
-    element: <Score />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+    },
+    {
+      path: "quiz/:id",
+      element: <Home />,
+    },
+    {
+      path: "quizzes",
+      element: <Quizzes />,
+    },
+    {
+      path: "score",
+      element: <Score />,
+    },
+  ],
+  { basename: "/quiz-app/" }
+);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
