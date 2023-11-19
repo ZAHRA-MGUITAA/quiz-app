@@ -18,7 +18,7 @@ const initialState: QuestionsState = {
 export const fetchQuestion = createAsyncThunk<Question[], string | undefined>(
   "data/fetchQuestion",
   async (quizId: string | undefined) => {
-    const quiz = await data?.quizzes.find((quiz) => quiz.id === quizId);
+    const quiz = await data?.quizzes?.find((quiz) => quiz?.id === quizId);
     const response = await quiz?.questions;
     return response || [];
   }

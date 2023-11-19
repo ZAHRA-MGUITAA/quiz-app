@@ -1,31 +1,32 @@
+type CheckboxDataType = {
+  answer: string;
+  index: number;
+  handelChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void;
+  isChecked: boolean;
+  isDisabled: boolean;
+};
+
 const Checkbox = ({
   answer,
   index,
   handelChange,
   isChecked,
   isDisabled,
-}: {
-  answer: string;
-  index: number;
-  handelChange: any;
-  isChecked: boolean;
-  isDisabled: boolean;
-}) => {
+}: CheckboxDataType) => {
   const asciiToLetter = (value: number): string => String.fromCharCode(value);
 
   return (
     <div
       className={
-        (isChecked ? "bg-gray-300" : "bg-white") + " group   px-4 w-full "
+        (isChecked ? "bg-gray-300" : "bg-white") + " group px-4 w-full"
       }
-      key={index}
+      key={answer} //more stable
     >
-      <label className="w-full flex items-center gap-8 h-full relative  py-4 ">
+      <label className="w-full flex items-center gap-8 h-full relative py-4 cursor-pointer">
         <input
           type="checkbox"
           className="opacity-0"
           name="answer"
-          id=""
           value={answer}
           checked={isChecked}
           disabled={isDisabled}
