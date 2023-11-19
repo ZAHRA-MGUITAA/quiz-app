@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
 import Checkbox from "../../components/Checkbox";
-import { completQuiz, decrementScore } from "../../app/scoreSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { fetchQuestion, nextQuestion } from "../../app/questionSlice";
+import { completQuiz, decrementScore } from "../../Store/scoreSlice";
+import { useAppDispatch, useAppSelector } from "../../Store/hooks";
+import { fetchQuestion, nextQuestion } from "../../Store/questionSlice";
 import { useEffect, useState } from "react";
-import { selectQuestion } from "../../app/questionSlice";
-import { incrementScore } from "../../app/scoreSlice";
+import { selectQuestion } from "../../Store/questionSlice";
+import { incrementScore } from "../../Store/scoreSlice";
 
 const SingleQuiz = () => {
   const dispatch = useAppDispatch();

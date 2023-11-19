@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { selectScore } from "../../app/scoreSlice";
-import { selectQuestion } from "../../app/questionSlice";
+import { selectScore } from "../../Store/scoreSlice";
+import { selectQuestion } from "../../Store/questionSlice";
 import { useNavigate } from "react-router-dom";
 
 const Score = () => {

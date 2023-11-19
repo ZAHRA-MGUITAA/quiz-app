@@ -31,16 +31,9 @@ export const questionSlice = createSlice({
     nextQuestion: (state) => {
       state.currentQuestionIndex += 1;
     },
-
-    // allQuestion : (state,action:PayloadAction<string|undefined>) => {
-    //     const quiz = data?.quizzes.find((quiz) => quiz.id === action.payload);
-    //     state.questions = quiz ? quiz.questions : [];
-    // }
   },
   extraReducers: (builder) => {
-    // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(fetchQuestion.fulfilled, (state, action) => {
-      // Add user to the state array
       state.questions = action.payload;
       state.loading = "success";
     });
