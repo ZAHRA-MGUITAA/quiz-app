@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectScore } from "../../app/scoreSlice";
+import { selectScore } from "../../Store/scoreSlice";
 import Score from "./Score";
 import SingleQuiz from "./SingleQuiz";
 

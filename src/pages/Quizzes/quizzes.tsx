@@ -1,14 +1,19 @@
 import data from "../../data/data.json";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Quiz } from "../../types";
 
 const Quizzes = () => {
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setQuizzes(data.quizzes);
-  });
+    setQuizzes(data?.quizzes);
+  }, [quizzes]);
+
+  const handelNavigate = (id: string) => {
+    navigate(`/quiz/${id}`);
+  };
 
   return (
     <div className="container mx-auto flex flex-col items-center gap-6 py-44">
@@ -16,16 +21,21 @@ const Quizzes = () => {
         Get Your Skills Certified
       </h1>
       <div className="flex flex-col md:flex-row gap-4">
-        {quizzes.map((quiz) => (
+        {quizzes?.map((quiz) => (
           <div
             className="py-4 px-8 bg-white shadow-xl flex flex-col justify-around h-44 rounded-lg items-center"
-            key={quiz.id}
+            key={quiz?.id}
           >
             <h3 className="text-lg font-bold text-center text-black ">
-              {quiz.title}
+              {quiz?.title}
             </h3>
-            <button className="bg-secondaryColor text-black py-2 px-4 rounded-md w-fit">
-              <Link to={"/quiz/" + quiz.id}>Start your test </Link>
+
+            <button
+              className="bg-secondaryColor text-black py-2 px-4 rounded-md w-fit"
+              onClick={() => handelNavigate(quiz?.id)}
+            >
+              Start your quiz
+              {/* <Link to={"/quiz/" + quiz?.id}>Start your quiz </Link> */}
             </button>
           </div>
         ))}
